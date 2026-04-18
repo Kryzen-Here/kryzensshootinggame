@@ -291,9 +291,10 @@ Enemies use a **state machine** with 7 states:
 # Just double-click index.html
 # Or drag it into your browser
 
+```
 
 Option 2 — Local Server (Recommended)
-Bash
+```bash
 
 # Using Python
 python -m http.server 8080
@@ -306,3 +307,4 @@ npx serve .
 # Using VS Code
 # Install the "Live Server" extension
 # Right-click index.html → Open with Live Server
+```
