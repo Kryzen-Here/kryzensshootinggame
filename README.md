@@ -293,7 +293,7 @@ Enemies use a **state machine** with 7 states:
 
 ```
 
-Option 2 — Local Server (Recommended)
+### Option 2 — Local Server (Recommended)
 ```bash
 
 # Using Python
@@ -308,3 +308,88 @@ npx serve .
 # Install the "Live Server" extension
 # Right-click index.html → Open with Live Server
 ```
+
+### Option 3 — Deploy Online
+```bash
+Upload index.html to any static hosting service:
+
+GitHub Pages — Free, just push to a repo and enable Pages
+Netlify — Drag and drop the file at netlify.com
+Vercel — vercel deploy
+itch.io — Upload as an HTML game
+```
+
+### 🌐 Browser Compatibility
+
+Browser	PC	Mobile
+Chrome 90+	✅ Full support	✅ Full support
+Firefox 88+	✅ Full support	✅ Full support
+Edge 90+	✅ Full support	✅ Full support
+Safari 14+	✅ Full support	✅ Full support
+Opera 76+	✅ Full support	✅ Full support
+Note: Pointer Lock API (mouse capture) requires a user gesture (click) to activate. This is a browser security requirement and cannot be bypassed.
+
+Note: Web Audio API may be suspended until the first user interaction on some mobile browsers. Audio will begin working after you tap the screen.
+
+⚠️ Known Issues
+Issue	Workaround
+Mouse not locking on first click	Click the game canvas again
+Audio delay on first shot	Normal — browser requires user interaction first
+Performance drops with many particles	Reduces automatically; lower device pixel ratio helps
+Mobile joystick may drift	Lift finger and re-press joystick zone
+Safari pointer lock may not work	Use Chrome or Firefox for best PC experience
+
+
+### 🔧 Customization
+You can easily modify these values in the JavaScript to change gameplay:
+
+```bash
+// Player stats
+P.speed = 5;          // Walk speed
+P.sprintSpd = 9;      // Sprint speed
+P.jumpF = 7;          // Jump force
+P.maxHP = 100;        // Max health
+
+// Weapon stats (in WEAPS object)
+ak: { maxAmmo: 30, dmg: 25, rate: 0.1 }
+glock: { maxAmmo: 15, dmg: 20, rate: 0.18 }
+karambit: { dmg: 55, range: 3.5 }
+
+// Wave settings
+G.spnI = 2.5;         // Seconds between spawns
+// Enemies per wave = 5 + wave * 3
+
+// Enemy AI
+this.detectRange = 35; // How far enemies can see you
+this.rushChance = 0.05; // Chance per second to rush
+```
+
+
+
+### 🎮 Tips & Strategies
+Keep moving — Standing still makes you an easy target
+Use the slide to dodge enemy rushes
+Switch to Karambit when surrounded — unlimited ammo and high damage
+Watch the minimap — orange dots are retreating, red are rushing
+Health regens between waves — survive to the wave end for +25 HP
+Enemies dodge bullets — lead your shots at rushing enemies
+Buildings provide cover — use them to break enemy line of sight
+Glock for precision — use it on distant single targets to save AK ammo
+Strafe while shooting — reduces enemy accuracy when they attack
+Higher waves = more enemies retreat — use this to spread them out
+
+
+
+### 📜 Credits
+Game Engine: Three.js r128 — MIT License
+Audio: Web Audio API — Procedurally generated, no samples used
+Development: Built as a complete single-file browser game
+Font: Segoe UI (system font, no external loading)
+
+
+### 🙏 Final Note
+This entire game runs in a single HTML file with no backend, no server, no build process, and no external assets beyond the Three.js CDN link. Everything — the 3D models, sounds, UI, AI, physics, and persistence — is generated and handled in pure JavaScript in the browser.
+
+Enjoy the game, and good luck surviving the waves! ☠️
+
+Made with ❤️ and way too much JavaScript
