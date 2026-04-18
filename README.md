@@ -290,3 +290,19 @@ Enemies use a **state machine** with 7 states:
 ```bash
 # Just double-click index.html
 # Or drag it into your browser
+
+
+Option 2 — Local Server (Recommended)
+Bash
+
+# Using Python
+python -m http.server 8080
+# Then open http://localhost:8080
+
+# Using Node.js
+npx serve .
+# Then open http://localhost:3000
+
+# Using VS Code
+# Install the "Live Server" extension
+# Right-click index.html → Open with Live Server
